@@ -11,27 +11,27 @@ local slope_cbox = {
 local slope_cbox_long = {
 	type = "fixed",
 	fixed = {
-		{-0.5, -0.5,   -1.5,  0.5, -0.375, 0.5},  --  NodeBox1
-		{-0.5, -0.375, -1.25, 0.5, -0.25,  0.5},  --  NodeBox2
-		{-0.5, -0.25,  -1,    0.5, -0.125, 0.5},  --  NodeBox3
-		{-0.5, -0.125, -0.75, 0.5,  0,     0.5},  --  NodeBox4
-		{-0.5,  0,     -0.5,  0.5,  0.125, 0.5},  --  NodeBox5
-		{-0.5,  0.125, -0.25, 0.5,  0.25,  0.5},  --  NodeBox6
-		{-0.5,  0.25,   0,    0.5,  0.375, 0.5},  --  NodeBox7
-		{-0.5,  0.375,  0.25, 0.5,  0.5,   0.5},  --  NodeBox8
+		{-0.5, -0.5,   -1.5,  0.5, -0.375, 0.5},
+		{-0.5, -0.375, -1.25, 0.5, -0.25,  0.5},
+		{-0.5, -0.25,  -1,    0.5, -0.125, 0.5},
+		{-0.5, -0.125, -0.75, 0.5,  0,     0.5},
+		{-0.5,  0,     -0.5,  0.5,  0.125, 0.5},
+		{-0.5,  0.125, -0.25, 0.5,  0.25,  0.5},
+		{-0.5,  0.25,   0,    0.5,  0.375, 0.5},
+		{-0.5,  0.375,  0.25, 0.5,  0.5,   0.5},
 	}
 }
 
 local icorner_cbox = {
 	type = "fixed",
 	fixed = {
-		{-0.5, -0.5, -0.5, 0.5, -0.25, 0.5}, -- NodeBox5
-		{-0.5, -0.5, -0.25, 0.5, 0, 0.5}, -- NodeBox6
-		{-0.5, -0.5, -0.5, 0.25, 0, 0.5}, -- NodeBox7
-		{-0.5, 0, -0.5, 0, 0.25, 0.5}, -- NodeBox8
-		{-0.5, 0, 0, 0.5, 0.25, 0.5}, -- NodeBox9
-		{-0.5, 0.25, 0.25, 0.5, 0.5, 0.5}, -- NodeBox10
-		{-0.5, 0.25, -0.5, -0.25, 0.5, 0.5}, -- NodeBox11
+		{-0.5, -0.5, -0.5, 0.5, -0.25, 0.5},
+		{-0.5, -0.5, -0.25, 0.5, 0, 0.5},
+		{-0.5, -0.5, -0.5, 0.25, 0, 0.5},
+		{-0.5, 0, -0.5, 0, 0.25, 0.5},
+		{-0.5, 0, 0, 0.5, 0.25, 0.5},
+		{-0.5, 0.25, 0.25, 0.5, 0.5, 0.5},
+		{-0.5, 0.25, -0.5, -0.25, 0.5, 0.5},
 	}
 }
 
@@ -87,7 +87,7 @@ minetest.register_node("mypaths:grass", {
 	drawtype = "normal",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {crumbly = 2, soil=1},
+	groups = {crumbly = 2, soil=1, dirt = 1},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.25},
@@ -110,7 +110,7 @@ minetest.register_node("mypaths:grass_slope", {
 	tiles = {"default_grass.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {crumbly = 2, soil=1},
+	groups = {crumbly = 2, soil=1, dirt = 1},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.25},
@@ -135,7 +135,7 @@ minetest.register_node("mypaths:grass_slope_long", {
 	tiles = {"default_grass.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {crumbly = 2, soil=1},
+	groups = {crumbly = 2, soil=1, dirt = 1},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.25},
@@ -161,7 +161,7 @@ minetest.register_node("mypaths:grass_ocorner", {
 	tiles = {"default_grass.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {crumbly = 2, soil=1},
+	groups = {crumbly = 2, soil=1, dirt = 1},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.25},
@@ -188,7 +188,7 @@ minetest.register_node("mypaths:grass_icorner", {
 	tiles = {"default_grass.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {crumbly = 2, soil=1},
+	groups = {crumbly = 2, soil=1, dirt = 1},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.25},
@@ -213,7 +213,7 @@ minetest.register_node("mypaths:grass_slope_long_oc", {
 	tiles = {"default_grass.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {crumbly = 2, soil=1},
+	groups = {crumbly = 2, soil=1, dirt = 1},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.25},
@@ -238,7 +238,7 @@ minetest.register_node("mypaths:grass_slope_long_ic", {
 	tiles = {"default_grass.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {crumbly = 2, soil=1},
+	groups = {crumbly = 2, soil=1, dirt = 1},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.25},
