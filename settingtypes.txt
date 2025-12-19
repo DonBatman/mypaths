@@ -1,0 +1,3 @@
+#Enable for Footsteps
+mypaths.footsteps(Enable to make paths when walking) bool false
+

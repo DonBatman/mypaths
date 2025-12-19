@@ -18,7 +18,7 @@ for i in ipairs(material) do
 
 
 
-minetest.register_node("mypaths:path_"..mat, {
+core.register_node("mypaths:path_"..mat, {
 	description = ""..matdesc.." Path",
 	drawtype = "nodebox",
 	tiles = {""..imgtile..".png"},
@@ -53,10 +53,10 @@ minetest.register_node("mypaths:path_"..mat, {
 			{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
 		},
 	},
-	on_place = minetest.rotate_node
+	on_place = core.rotate_node
 })
 --Craft
-minetest.register_craft({
+core.register_craft({
 	output = "mypaths:path_"..mat.." 5",
 	recipe = {
 		{"","default:gravel",""},

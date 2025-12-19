@@ -23,7 +23,7 @@ local slope_cbox_long = {
 }
 
 --Dirt Road Side Slope
-minetest.register_node("mypaths:dirt_road_slope", {
+core.register_node("mypaths:dirt_road_slope", {
 	description = "Dirt Road Edge Slope",
 	drawtype = "mesh",
 	mesh = "slope.obj",
@@ -33,14 +33,14 @@ minetest.register_node("mypaths:dirt_road_slope", {
 	groups = {crumbly = 2},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults(),
-	on_place = minetest.rotate_node,
+	on_place = core.rotate_node,
 	collision_box = slope_cbox,
 	selection_box = slope_cbox
 })
 
 
 --Craft
-minetest.register_craft({
+core.register_craft({
 	output = "mypaths:dirt_road_slope 6",
 	recipe = {
 		{"", "","mypaths:dirt_road_side"},
@@ -50,7 +50,7 @@ minetest.register_craft({
 })
 
 --Dirt Road Side Slope 2
-minetest.register_node("mypaths:dirt_road_slope2", {
+core.register_node("mypaths:dirt_road_slope2", {
 	description = "Dirt Road Edge Slope 2",
 	drawtype = "mesh",
 	mesh = "slope.obj",
@@ -60,12 +60,12 @@ minetest.register_node("mypaths:dirt_road_slope2", {
 	groups = {crumbly = 2},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults(),
-	on_place = minetest.rotate_node,
+	on_place = core.rotate_node,
 	collision_box = slope_cbox,
 	selection_box = slope_cbox
 })
 --Craft
-minetest.register_craft({
+core.register_craft({
 	output = "mypaths:dirt_road_slope2 6",
 	recipe = {
 		{"mypaths:dirt_road_side", "",""},
@@ -75,7 +75,7 @@ minetest.register_craft({
 })
 
 --Dirt Road Slope
-minetest.register_node("mypaths:dirt_dirt_slope", {
+core.register_node("mypaths:dirt_dirt_slope", {
 	description = "Dirt Road Slope",
 	drawtype = "mesh",
 	mesh = "twelve-twelve.obj",
@@ -85,13 +85,13 @@ minetest.register_node("mypaths:dirt_dirt_slope", {
 	groups = {crumbly = 2},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults(),
-	on_place = minetest.rotate_node,
+	on_place = core.rotate_node,
 	collision_box = slope_cbox,
 	selection_box = slope_cbox
 })
 
 --Dirt Road Slope Long
-minetest.register_node("mypaths:dirt_slope_long", {
+core.register_node("mypaths:dirt_slope_long", {
 	description = "Dirt Long slope",
 	drawtype = "mesh",
 	mesh = "six-twelve_slope.obj",
@@ -101,12 +101,12 @@ minetest.register_node("mypaths:dirt_slope_long", {
 	groups = {crumbly = 2},
 	is_ground_content = false,
 	sounds = default.node_sound_wood_defaults(),
-	on_place = minetest.rotate_node,
+	on_place = core.rotate_node,
 	collision_box = slope_cbox_long,
 	selection_box = slope_cbox_long
 })
 --Craft
-minetest.register_craft({
+core.register_craft({
 	output = "mypaths:dirt_slope_long 1",
 	recipe = {
 		{"mypaths:dirt_dirt_slope", "mypaths:dirt_dirt_slope",""},
@@ -114,9 +114,57 @@ minetest.register_craft({
 		{"", "",""},
 	}
 })
+--Dirt Road Slope Long
+core.register_node("mypaths:dirt_slope_long3", {
+	description = "Dirt Long Slope 3",
+	drawtype = "mesh",
+	mesh = "mypaths_slope_long3.obj",
+	tiles = {"mypaths_dirt_road.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {crumbly = 2},
+	is_ground_content = false,
+	sounds = default.node_sound_wood_defaults(),
+	on_place = core.rotate_node,
+	collision_box = slope_cbox_long,
+	selection_box = slope_cbox_long
+})
+--Craft
+core.register_craft({
+	output = "mypaths:dirt_slope_long3 1",
+	recipe = {
+		{"mypaths:dirt_dirt_slope", "mypaths:dirt_dirt_slope","mypaths:dirt_dirt_slope"},
+		{"", "",""},
+		{"", "",""},
+	}
+})
+--Dirt Road Slope Long 4
+core.register_node("mypaths:dirt_slope_long4", {
+	description = "Dirt Long Slope 4",
+	drawtype = "mesh",
+	mesh = "mypaths_slope_long4.obj",
+	tiles = {"mypaths_dirt_road.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {crumbly = 2},
+	is_ground_content = false,
+	sounds = default.node_sound_wood_defaults(),
+	on_place = core.rotate_node,
+	collision_box = slope_cbox_long,
+	selection_box = slope_cbox_long
+})
+--Craft
+core.register_craft({
+	output = "mypaths:dirt_slope_long4 1",
+	recipe = {
+		{"mypaths:dirt_dirt_slope", "mypaths:dirt_dirt_slope",""},
+		{"mypaths:dirt_dirt_slope", "mypaths:dirt_dirt_slope",""},
+		{"", "",""},
+	}
+})
 
 --Dirt Road Side Slope Long
-minetest.register_node("mypaths:dirt_side_slope_long", {
+core.register_node("mypaths:dirt_side_slope_long", {
 	description = "Dirt Side Long slope",
 	drawtype = "mesh",
 	mesh = "slope_long.obj",
@@ -126,12 +174,12 @@ minetest.register_node("mypaths:dirt_side_slope_long", {
 	groups = {crumbly = 2},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults(),
-	on_place = minetest.rotate_node,
+	on_place = core.rotate_node,
 	collision_box = slope_cbox_long,
 	selection_box = slope_cbox_long
 })
 --Craft
-minetest.register_craft({
+core.register_craft({
 	output = "mypaths:dirt_side_slope_long 1",
 	recipe = {
 		{"mypaths:dirt_road_slope", "mypaths:dirt_road_slope",""},
@@ -139,9 +187,55 @@ minetest.register_craft({
 		{"", "",""},
 	}
 })
+core.register_node("mypaths:dirt_side_slope_long3", {
+	description = "Dirt Side Long Slope 3",
+	drawtype = "mesh",
+	mesh = "mypaths_slope_long3x.obj",
+	tiles = {"mypaths_dirt_side_long_mesh.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {crumbly = 2},
+	is_ground_content = false,
+	sounds = default.node_sound_dirt_defaults(),
+	on_place = core.rotate_node,
+	collision_box = slope_cbox_long,
+	selection_box = slope_cbox_long
+})
+--Craft
+core.register_craft({
+	output = "mypaths:dirt_side_slope_long3 1",
+	recipe = {
+		{"mypaths:dirt_road_slope", "mypaths:dirt_road_slope","mypaths:dirt_road_slope"},
+		{"", "",""},
+		{"", "",""},
+	}
+})
+core.register_node("mypaths:dirt_side_slope_long4", {
+	description = "Dirt Side Long Slope 4",
+	drawtype = "mesh",
+	mesh = "mypaths_slope_long4x.obj",
+	tiles = {"mypaths_dirt_side_long_mesh.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {crumbly = 2},
+	is_ground_content = false,
+	sounds = default.node_sound_dirt_defaults(),
+	on_place = core.rotate_node,
+	collision_box = slope_cbox_long,
+	selection_box = slope_cbox_long
+})
+--Craft
+core.register_craft({
+	output = "mypaths:dirt_side_slope_long4 1",
+	recipe = {
+		{"mypaths:dirt_road_slope", "mypaths:dirt_road_slope",""},
+		{"mypaths:dirt_road_slope", "mypaths:dirt_road_slope",""},
+		{"", "",""},
+	}
+})
 
 --Dirt Road Side Slope Long2
-minetest.register_node("mypaths:dirt_side_slope_long2", {
+core.register_node("mypaths:dirt_side_slope_long2", {
 	description = "Dirt Side Long slope 2",
 	drawtype = "mesh",
 	mesh = "slope_long.obj",
@@ -151,12 +245,12 @@ minetest.register_node("mypaths:dirt_side_slope_long2", {
 	groups = {crumbly = 2},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults(),
-	on_place = minetest.rotate_node,
+	on_place = core.rotate_node,
 	collision_box = slope_cbox_long,
 	selection_box = slope_cbox_long
 })
 --Craft
-minetest.register_craft({
+core.register_craft({
 	output = "mypaths:dirt_side_slope_long2 1",
 	recipe = {
 		{"mypaths:dirt_road_slope2", "mypaths:dirt_road_slope2",""},
@@ -164,9 +258,55 @@ minetest.register_craft({
 		{"", "",""},
 	}
 })
+core.register_node("mypaths:dirt_side_slope_long23", {
+	description = "Dirt Side Long slope 2 3",
+	drawtype = "mesh",
+	mesh = "mypaths_slope_long3x.obj",
+	tiles = {"mypaths_dirt_side_long_mesh2.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {crumbly = 2},
+	is_ground_content = false,
+	sounds = default.node_sound_dirt_defaults(),
+	on_place = core.rotate_node,
+	collision_box = slope_cbox_long,
+	selection_box = slope_cbox_long
+})
+--Craft
+core.register_craft({
+	output = "mypaths:dirt_side_slope_long23 1",
+	recipe = {
+		{"mypaths:dirt_road_slope", "mypaths:dirt_road_slope",""},
+		{"mypaths:dirt_road_slope", "",""},
+		{"", "",""},
+	}
+})
+core.register_node("mypaths:dirt_side_slope_long24", {
+	description = "Dirt Side Long slope 2 4",
+	drawtype = "mesh",
+	mesh = "mypaths_slope_long4x.obj",
+	tiles = {"mypaths_dirt_side_long_mesh2.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {crumbly = 2},
+	is_ground_content = false,
+	sounds = default.node_sound_dirt_defaults(),
+	on_place = core.rotate_node,
+	collision_box = slope_cbox_long,
+	selection_box = slope_cbox_long
+})
+--Craft
+core.register_craft({
+	output = "mypaths:dirt_side_slope_long24 1",
+	recipe = {
+		{"mypaths:dirt_road_slope", "mypaths:dirt_road_slope",""},
+		{"mypaths:dirt_road_slope", "mypaths:dirt_road_slope",""},
+		{"", "",""},
+	}
+})
 
 --Dirt Road Side Slope
-minetest.register_node("mypaths:dirt_road_slope_narrow", {
+core.register_node("mypaths:dirt_road_slope_narrow", {
 	description = "Narrow Dirt Road Slope",
 	drawtype = "mesh",
 	mesh = "slope.obj",
@@ -176,13 +316,13 @@ minetest.register_node("mypaths:dirt_road_slope_narrow", {
 	groups = {crumbly = 2},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults(),
-	on_place = minetest.rotate_node,
+	on_place = core.rotate_node,
 	collision_box = slope_cbox,
 	selection_box = slope_cbox
 })
 
 --Dirt Road Side Slope
-minetest.register_node("mypaths:dirt_road_slope_narrow_long", {
+core.register_node("mypaths:dirt_road_slope_narrow_long", {
 	description = "Narrow Dirt Road Slope Long",
 	drawtype = "mesh",
 	mesh = "slope_long.obj",
@@ -192,7 +332,35 @@ minetest.register_node("mypaths:dirt_road_slope_narrow_long", {
 	groups = {crumbly = 2},
 	is_ground_content = false,
 	sounds = default.node_sound_dirt_defaults(),
-	on_place = minetest.rotate_node,
+	on_place = core.rotate_node,
+	collision_box = slope_cbox,
+	selection_box = slope_cbox
+})
+core.register_node("mypaths:dirt_road_slope_narrow_long3", {
+	description = "Narrow Dirt Road Slope Long 3",
+	drawtype = "mesh",
+	mesh = "mypaths_slope_long3x.obj",
+	tiles = {"mypaths_dirt_narrow_long_mesh.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {crumbly = 2},
+	is_ground_content = false,
+	sounds = default.node_sound_dirt_defaults(),
+	on_place = core.rotate_node,
+	collision_box = slope_cbox,
+	selection_box = slope_cbox
+})
+core.register_node("mypaths:dirt_road_slope_narrow_long4", {
+	description = "Narrow Dirt Road Slope Long 4",
+	drawtype = "mesh",
+	mesh = "mypaths_slope_long4x.obj",
+	tiles = {"mypaths_dirt_narrow_long_mesh.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {crumbly = 2},
+	is_ground_content = false,
+	sounds = default.node_sound_dirt_defaults(),
+	on_place = core.rotate_node,
 	collision_box = slope_cbox,
 	selection_box = slope_cbox
 })

@@ -1,16 +1,34 @@
+local footsteps = core.settings:get_bool("mypaths.footsteps", false)
+dofile(core.get_modpath("mypaths").."/dirt_road.lua")
+dofile(core.get_modpath("mypaths").."/dirt_road_slopes.lua")
+dofile(core.get_modpath("mypaths").."/dry_dirt_road.lua")
+dofile(core.get_modpath("mypaths").."/dry_dirt_road_slopes.lua")
+dofile(core.get_modpath("mypaths").."/litter_dirt_road.lua")
+dofile(core.get_modpath("mypaths").."/litter_dirt_road_slopes.lua")
+dofile(core.get_modpath("mypaths").."/snow_dirt_road.lua")
+dofile(core.get_modpath("mypaths").."/snow_dirt_road_slopes.lua")
+dofile(core.get_modpath("mypaths").."/sand_dirt_road.lua")
+dofile(core.get_modpath("mypaths").."/sand_dirt_road_slopes.lua")
+dofile(core.get_modpath("mypaths").."/desert_sand_dirt_road.lua")
+dofile(core.get_modpath("mypaths").."/desert_sand_dirt_road_slopes.lua")
+dofile(core.get_modpath("mypaths").."/silver_sand_dirt_road.lua")
+dofile(core.get_modpath("mypaths").."/silver_sand_dirt_road_slopes.lua")
+dofile(core.get_modpath("mypaths").."/rainforest_litter_dirt_road.lua")
+dofile(core.get_modpath("mypaths").."/rainforest_litter_dirt_road_slopes.lua")
+dofile(core.get_modpath("mypaths").."/stone_paths.lua")
+dofile(core.get_modpath("mypaths").."/grass.lua")
 
-dofile(minetest.get_modpath("mypaths").."/dirt_road.lua")
-dofile(minetest.get_modpath("mypaths").."/dirt_road_slopes.lua")
-dofile(minetest.get_modpath("mypaths").."/stone_paths.lua")
-dofile(minetest.get_modpath("mypaths").."/grass.lua")
-
-if minetest.get_modpath("ethereal") then
-	dofile(minetest.get_modpath("mypaths").."/ethereal.lua")
-	minetest.register_alias("mypaths:dirt_road", "ethereal:dry_dirt")
-else
-	dofile(minetest.get_modpath("mypaths").."/crafts.lua")
+if footsteps then
+	dofile(core.get_modpath("mypaths").."/footsteps.lua")
 end
-if minetest.get_modpath("moreblocks") then
+
+if core.get_modpath("ethereal") then
+	dofile(core.get_modpath("mypaths").."/ethereal.lua")
+	core.register_alias("mypaths:dirt_road", "ethereal:dry_dirt")
+else
+	dofile(core.get_modpath("mypaths").."/crafts.lua")
+end
+if core.get_modpath("moreblocks") then
 
         stairsplus:register_all(
                 "mypaths",
