@@ -27,14 +27,14 @@ local path_recovery = {
 }
 
 local path_nodes = {
-	{ "path", "Grass", "default_grass.png" },
-	{ "dry_grass_path", "Dry Grass", "default_dry_grass.png" },
-	{ "coniferous_litter_path", "Coniferous Litter", "default_coniferous_litter.png" },
-	{ "rainforest_litter_path", "Rainforest Litter", "default_rainforest_litter.png" },
-	{ "snow_path", "Snow", "default_snow.png" },
-	{ "sand_path", "Sand", "default_sand.png" },
-	{ "desert_sand_path", "Desert Sand", "default_desert_sand.png" },
-	{ "silver_sand_path", "Silver Sand", "default_silver_sand.png" },
+	{ "path", "Grass", "default_grass.png", "default:dirt_with_grass"},
+	{ "dry_grass_path", "Dry Grass", "default_dry_grass.png", "default:dry_dirt_with_dry_grass" },
+	{ "coniferous_litter_path", "Coniferous Litter", "default_coniferous_litter.png", "default:dirt_with_coniferous_litter" },
+	{ "rainforest_litter_path", "Rainforest Litter", "default_rainforest_litter.png", "default:dirt_with_rainforest_litter" },
+	{ "snow_path", "Snow", "default_snow.png", "default:dirt_with_snow" },
+	{ "sand_path", "Sand", "default_sand.png", "default:sand" },
+	{ "desert_sand_path", "Desert Sand", "default_desert_sand.png", "default:desert_sand" },
+	{ "silver_sand_path", "Silver Sand", "default_silver_sand.png", "default:silver_sand" },
 }
 
 for _, data in ipairs(path_nodes) do
@@ -44,6 +44,7 @@ for _, data in ipairs(path_nodes) do
 		drawtype = "normal",
 		paramtype = "light",
 		paramtype2 = "facedir",
+		drop = data[4],
 		groups = {crumbly = 2, not_in_creative_inventory = 0, path = 1},
 		is_ground_content = false,
 		sounds = default.node_sound_dirt_defaults(),
