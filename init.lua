@@ -203,4 +203,17 @@ if core.get_modpath("moreblocks") then
 
 
 end
-
+if core.get_modpath("lucky_block") then
+	lucky_block:add_blocks({
+		{"dro", {"mypaths:grass"}, 10},
+		{"dro", {"mypaths:dirt_road"}, 10},
+		{"dro", {"mypaths:dirt_road_side"}, 10},
+		{"dro", {"mypaths:dirt_road_side_angle"}, 10},
+		{"dro", {"mypaths:dirt_road_side_angle_end1"}, 10},
+		{"dro", {"mypaths:dirt_road_side_angle_end2"}, 10},
+		{"dro", {"mypaths:dirt_road_side_angle_end3"}, 10},
+		{"dro", {"mypaths:dirt_road_side_angle_end4"}, 10},
+		{"dro", {"mypaths:dirt_road_icorner"}, 10},
+		{"dro", {"mypaths:dirt_road_ocorner"}, 10},
+	})
+end
